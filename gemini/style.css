@@ -1,0 +1,64 @@
+:root {
+    --primary: #8e44ad;
+    --primary-hover: #a55eea;
+    --dark-bg: #0a0a0a;
+    --card-bg: #161616;
+    --text: #ffffff;
+    --text-muted: #a0a0a0;
+    --gray-line: #262626;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; }
+body { 
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
+                url('background.png') no-repeat center center fixed; 
+    background-size: cover; 
+    color: var(--text); 
+    overflow-x: hidden; 
+}
+/* Header */
+.main-header { height: 72px; border-bottom: 1px solid var(--gray-line); background: rgba(10, 10, 10, 0.95); position: sticky; top: 0; z-index: 1000; }
+.header-flex { display: flex; justify-content: space-between; align-items: center; height: 100%; }
+.logo { font-size: 24px; font-weight: 800; cursor: pointer; }
+.logo span { color: var(--primary); }
+.nav-menu a { text-decoration: none; color: var(--text); margin-right: 25px; font-size: 14px; font-weight: 500; transition: 0.3s; }
+.nav-menu a:hover { color: var(--primary); }
+.cart-trigger { background: var(--card-bg); border: 1px solid var(--gray-line); padding: 10px; border-radius: 50%; cursor: pointer; color: white; position: relative; }
+#cart-count { position: absolute; top: -5px; right: -5px; background: var(--primary); padding: 2px 6px; border-radius: 10px; font-size: 10px; }
+
+/* Hero */
+.hero-search { padding: 80px 20px; text-align: center; background: linear-gradient(to bottom, #1a0a2a, var(--dark-bg)); }
+.search-container { max-width: 600px; margin: 20px auto; background: var(--card-bg); padding: 6px; border-radius: 50px; display: flex; border: 1px solid var(--gray-line); }
+.search-container input { flex: 1; background: transparent; border: none; padding: 12px 20px; color: white; outline: none; }
+.search-container button { background: var(--primary); color: white; border: none; padding: 0 25px; border-radius: 50px; cursor: pointer; }
+
+/* Tags */
+.tags-scroll { display: flex; gap: 10px; margin: 20px 0; overflow-x: auto; padding: 10px 0; scrollbar-width: none; }
+.tag { background: var(--card-bg); padding: 8px 20px; border-radius: 20px; font-size: 13px; cursor: pointer; border: 1px solid var(--gray-line); white-space: nowrap; }
+.tag.active { background: var(--primary); border-color: var(--primary); }
+
+/* Grid */
+.product-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 20px; }
+.card {
+    background: rgba(22, 22, 22, 0.8); /* O '0.8' deixa o fundo do card 80% opaco */
+    backdrop-filter: blur(10px); /* Cria um efeito de vidro fosco chique */
+    border-radius: 12px;
+    padding: 15px;
+    border: 1px solid var(--gray-line);
+    transition: 0.3s;
+}
+.card:hover { border-color: var(--primary); transform: translateY(-3px); }
+.card-img-box { height: 180px; width: 100%; border-radius: 8px; overflow: hidden; margin-bottom: 12px; background: #000; }
+.card-img-box img { width: 100%; height: 100%; object-fit: cover; opacity: 0.8; }
+.price { color: var(--primary); font-size: 20px; font-weight: 800; }
+
+/* Carrinho com Imagem */
+.cart-drawer { position: fixed; right: -400px; top: 0; width: 380px; height: 100%; background: var(--card-bg); z-index: 2000; transition: 0.4s; padding: 25px; display: flex; flex-direction: column; border-left: 1px solid var(--gray-line); }
+.cart-drawer.active { right: 0; }
+.cart-body { flex: 1; overflow-y: auto; padding: 15px 0; }
+.cart-item { display: flex; gap: 15px; background: #0f0f0f; padding: 12px; border-radius: 10px; margin-bottom: 12px; align-items: center; border: 1px solid var(--gray-line); }
+.cart-item-img { width: 60px; height: 60px; border-radius: 6px; object-fit: cover; }
+.cart-item-info h4 { font-size: 14px; margin-bottom: 4px; }
+.btn-remove { background: none; border: none; color: #ff4757; font-size: 12px; cursor: pointer; margin-top: 5px; }
+.btn-checkout { background: #25d366; color: white; padding: 15px; border: none; border-radius: 10px; font-weight: bold; cursor: pointer; width: 100%; }
+.close-btn { background: none; border: none; color: white; font-size: 28px; cursor: pointer; }

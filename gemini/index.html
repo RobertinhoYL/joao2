@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechGallery | Premium Dark Store</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+
+    <header class="main-header">
+        <div class="container header-flex">
+            <div class="logo" onclick="navegar('inicio')">Tech<span>Gallery</span></div>
+            <div class="header-right">
+                <nav class="nav-menu">
+                    <a href="javascript:void(0)" onclick="navegar('inicio')">Explorar</a>
+                    <a href="javascript:void(0)" onclick="navegar('produtos')">Catálogo</a>
+                </nav>
+                <button class="cart-trigger" onclick="toggleCart()">
+                    <i data-lucide="shopping-cart"></i>
+                    <span id="cart-count">0</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <div id="render-content"></div>
+
+    <div id="cart-drawer" class="cart-drawer">
+        <div class="cart-header">
+            <h3>Meu Carrinho</h3>
+            <button class="close-btn" onclick="toggleCart()">&times;</button>
+        </div>
+        <div id="cart-items" class="cart-body">
+            </div>
+        <div class="cart-footer">
+            <div class="total-row">
+                <span>Total</span>
+                <strong id="cart-total">$ 0,00</strong>
+            </div>
+            <button class="btn-checkout" onclick="finalizarWhatsApp()">Finalizar no WhatsApp</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
